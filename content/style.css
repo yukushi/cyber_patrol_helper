@@ -1,0 +1,23 @@
+.pop {
+    background-color: rgb(233, 233, 233);
+    margin:20px;
+    padding:20px;
+    border-radius: 6px;
+    position: fixed;
+    top: 10px;
+    right: 10px;
+    font-size: 18px;
+    box-shadow: 4px 4px;
+}
+
+.poptitle{
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.tyu{
+    color:red;
+    background-color: yellow;
+    font-weight: bold;
+    text-align: center;
+}

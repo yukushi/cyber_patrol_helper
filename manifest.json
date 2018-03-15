@@ -1,0 +1,17 @@
+{
+  "name": "マイ◯ビ　休日数チェッカー",
+  "version": "0.0.1",
+  "manifest_version": 2,
+  "description": "マイ◯ビの「採用データ」ページ内から年間休日数を取得して右上に表示するだけ",
+  "content_scripts": [
+    {
+      "matches": ["https://job.mynavi.jp/*/pc/search/*/employment.html*"],
+      "js": ["content/jquerymin.js","content/script.js"],
+      "css":["content/style.css"]
+    }
+  ],
+
+  "permissions": [
+    "tabs","activeTab"
+  ]
+}
