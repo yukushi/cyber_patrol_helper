@@ -1,4 +1,5 @@
 let id,sn;
+// chrome.storage.local.clear();
 
 //main.jsからのレスポンス受け取り，返答
 chrome.extension.onMessage.addListener(function(request, sender, sendResponse) {
@@ -6,6 +7,34 @@ chrome.extension.onMessage.addListener(function(request, sender, sendResponse) {
         sendResponse({"msg":"[OK]"});
         id = request.id;
         sn = request.sn;
+
+        let time = new Date();
+        let keyNo;
+        
+        //通報情報の保存
+        chrome.storage.local.get(["zCount"],function (value) {
+            if(value.zCount == undefined){
+                //初回の動作
+                keyNo = 0;
+                chrome.storage.local.set({
+                    "zCount":"0",
+                    [keyNo]:`${sn}/${id}/${time.getFullYear()}-${time.getMonth()+1}-${time.getDate()}`
+                });
+                console.log("undifneらしいからゼロ入れた");
+            }else{
+                keyNo = Number(value.zCount) + 1;
+                chrome.storage.local.set({
+                    "zCount":keyNo,
+                    [keyNo]:`${sn}/${id}/${time.getFullYear()}-${time.getMonth()+1}-${time.getDate()}`
+                });
+            }
+            });
+
+        //保存内容の確認
+        // chrome.storage.local.get(function (value2) {
+        // console.log(value2);
+        // });
+
     }
 });
 
