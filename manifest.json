@@ -19,6 +19,6 @@
     "scripts":["background/background.js"]
   },
   "permissions": [
-    "tabs","activeTab"
+    "tabs","activeTab","storage"
   ]
 }
