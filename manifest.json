@@ -1,16 +1,23 @@
 {
-  "name": "マイ◯ビ　休日数チェッカー",
+  "name": "サイバーパトロール通報支援",
   "version": "0.0.1",
   "manifest_version": 2,
-  "description": "マイ◯ビの「採用データ」ページ内から年間休日数を取得して右上に表示するだけ",
+  "description": "サイバーパトロールを効率化します",
   "content_scripts": [
     {
-      "matches": ["https://job.mynavi.jp/*/pc/search/*/employment.html*"],
-      "js": ["content/jquerymin.js","content/script.js"],
-      "css":["content/style.css"]
+      "matches": ["https://twitter.com/*"],
+      "js": ["content/jquery.min.js","content/main.js"],
+      "run_at":"document_end"
+    },
+    {
+      "matches": ["https://help.twitter.com/forms/cse"],
+      "js": ["content/report.js"],
+      "run_at":"document_end"
     }
   ],
-
+  "background":{
+    "scripts":["background/background.js"]
+  },
   "permissions": [
     "tabs","activeTab"
   ]
