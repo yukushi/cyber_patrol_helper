@@ -1,0 +1,11 @@
+html{
+    background-color:#E0ECF8;
+}
+body {
+    width: 600px;
+    height: 500px;
+    margin: 10px;
+    padding: 10px;
+    min-width: 357px;
+    overflow-x: hidden;
+}

@@ -10,7 +10,7 @@ chrome.extension.onMessage.addListener(function(request, sender, sendResponse) {
 
         let time = new Date();
         let keyNo;
-        
+
         //通報情報の保存
         chrome.storage.local.get(["zCount"],function (value) {
             if(value.zCount == undefined){
@@ -18,22 +18,21 @@ chrome.extension.onMessage.addListener(function(request, sender, sendResponse) {
                 keyNo = 0;
                 chrome.storage.local.set({
                     "zCount":"0",
-                    [keyNo]:`${sn}/${id}/${time.getFullYear()}-${time.getMonth()+1}-${time.getDate()}`
+                    [keyNo]:`${time.getFullYear()}-${time.getMonth()+1}-${time.getDate()}/${sn}/${id}`
                 });
-                console.log("undifneらしいからゼロ入れた");
             }else{
                 keyNo = Number(value.zCount) + 1;
                 chrome.storage.local.set({
                     "zCount":keyNo,
-                    [keyNo]:`${sn}/${id}/${time.getFullYear()}-${time.getMonth()+1}-${time.getDate()}`
+                    [keyNo]:`${time.getFullYear()}-${time.getMonth()+1}-${time.getDate()}/${sn}/${id}`
                 });
             }
             });
 
-        //保存内容の確認
-        // chrome.storage.local.get(function (value2) {
-        // console.log(value2);
-        // });
+        // 保存内容の確認
+        chrome.storage.local.get(function (value2) {
+        console.log(value2);
+        });
 
     }
 });
