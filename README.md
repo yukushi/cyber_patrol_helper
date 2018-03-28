@@ -1,4 +1,4 @@
-![](https://img.shields.io/badge/ver-0.0.1-brightgreen.svg?longCache=true&style=flat-square)
+![](https://img.shields.io/badge/ver-0.0.2-brightgreen.svg?longCache=true&style=flat-square)
 ![](https://img.shields.io/badge/JavaScript-ES6-yellow.svg?longCache=true&style=flat-square)
 ![](https://img.shields.io/badge/web%20browser-Google%20Chrome-blue.svg?longCache=true&style=flat-square)
 
@@ -10,6 +10,7 @@
 ## 機能
 - タイムライン上もしくは個別ツイートの下部に通報ボタンを設置
 - 通報ボタンをクリックすると通報ページが開き，URLとユーザ名を自動で入力
+- 通報履歴の閲覧とCSVのエクスポートが可能（ver0.0.2）
 
 ## ビルド
 ### 環境
