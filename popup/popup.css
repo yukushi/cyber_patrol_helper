@@ -3,7 +3,7 @@ html{
 }
 body {
     width: 200px;
-    height:70px;
+    height:400px;
     margin: 10px;
     padding: 10px;
     min-width: 357px;
@@ -16,12 +16,18 @@ h1{
     margin: 0;
 }
 
+h2{
+    font-size: 13px;
+    text-align: center;
+    margin: 20px 0;
+}
+
 .optionLink{
     width:100%;
     background-color: bisque;
     font-size: 25px;
     position: absolute;
-    top: 80%;
+    bottom: 0;
     left: 50%;
     transform: translateY(-50%) translateX(-50%);
     text-decoration:none;
@@ -30,4 +36,12 @@ h1{
 .optionLink:hover{
     background-color: rgb(34, 59, 97);
     color:white;
+}
+
+.box{
+    width:100%;
+}
+
+#saveTemp{
+    margin: 20px 0;
 }
