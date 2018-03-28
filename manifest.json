@@ -1,6 +1,6 @@
 {
   "name": "サイバーパトロール通報支援",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "manifest_version": 2,
   "description": "サイバーパトロールを効率化します",
   "content_scripts": [
@@ -23,6 +23,11 @@
     "default_title": "通報情報の保存",
     "default_popup" : "popup/popup.html"
   },
+
+  "options_ui": {
+    "page": "option/option.html"
+   ,"open_in_tab": true
+},
 
   "permissions": [
     "tabs","activeTab","storage"

@@ -1,0 +1,28 @@
+html{
+    background-color:#E0ECF8;
+}
+body {
+    width: 700px;
+    height: 500px;
+    margin: 10px;
+    padding: 10px;
+    min-width: 357px;
+    overflow-x: hidden;
+}
+
+table{
+    margin:50px;
+}
+
+h1{
+    margin:40px;
+}
+
+#download{
+    background-color: rgb(44, 136, 130);
+    font-size: 20px;
+    color:white;
+    margin:50px;
+    padding:20px;
+    text-decoration:none;
+}
