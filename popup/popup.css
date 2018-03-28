@@ -2,10 +2,32 @@ html{
     background-color:#E0ECF8;
 }
 body {
-    width: 600px;
-    height: 500px;
+    width: 200px;
+    height:70px;
     margin: 10px;
     padding: 10px;
     min-width: 357px;
     overflow-x: hidden;
+}
+
+h1{
+    font-size: 15px;
+    text-align: center;
+    margin: 0;
+}
+
+.optionLink{
+    width:100%;
+    background-color: bisque;
+    font-size: 25px;
+    position: absolute;
+    top: 80%;
+    left: 50%;
+    transform: translateY(-50%) translateX(-50%);
+    text-decoration:none;
+    text-align: center;
+}
+.optionLink:hover{
+    background-color: rgb(34, 59, 97);
+    color:white;
 }
