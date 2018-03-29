@@ -1,5 +1,4 @@
-let id,sn;
-// chrome.storage.local.clear();
+let id,sn,template,yourMail;
 
 //main.jsからのレスポンス受け取り，返答
 chrome.extension.onMessage.addListener(function(request, sender, sendResponse) {
@@ -41,9 +40,25 @@ chrome.extension.onMessage.addListener(function(request, sender, sendResponse) {
 //report.jsからのレスポンス受け取り，返答
 chrome.extension.onMessage.addListener(function(request, sender, sendResponse) {
     if(request.res == 1){
+        template = localStorage.getItem('template');
+        yourMail = localStorage.getItem('yourMail');
         sendResponse({
             "id":id,
-            "sn":sn
+            "sn":sn,
+            "any":template,
+            "mail":yourMail
         });
+    }
+});
+
+//popupからのレスポンス受け取り，返答
+chrome.extension.onMessage.addListener(function(request, sender, sendResponse) {
+    if((request.setTemp != "" || request.setMail != "") && (request.setNo == 1)){
+        template = request.setTemp;
+        yourMail = request.setMail;
+
+        localStorage.setItem('template', template);
+        localStorage.setItem('yourMail', yourMail);
+        
     }
 });
