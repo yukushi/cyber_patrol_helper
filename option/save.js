@@ -1,5 +1,6 @@
 //テーブル見出し
 let allObj = [["No","Date","Site","Category","Reason","User_ID","URL"]];
+let keyLength,fullCountNo;
 
 //CSV化関数
 //参考：http://amazarashi.me/archives/901
@@ -25,6 +26,10 @@ function exportcsv(allObj){
 
 //ローカルストレージの処理
 chrome.storage.local.get(function (localData) {
+
+	//現在の通報数取得
+	keyLength = Object.keys(localData).length;
+
 	for(let key in localData){
 		if(key!="zCount"){
 
@@ -58,5 +63,34 @@ chrome.storage.local.get(function (localData) {
 			allObj.push(obj);
 		}
 	}
-	self.exportcsv(allObj);
+	//データがあるときのみCSV化
+	if(allObj.length != 1) self.exportcsv(allObj);
 });
+
+//通報数の表示
+chrome.storage.local.get("zCount",function(value){
+	fullCountNo = value.zCount;
+	document.getElementById("fullCountNo").innerText = "今までの総通報数：" + Number(fullCountNo+1);
+	document.getElementById("countNo").innerText = "現在の通報数：" + Number(keyLength-1);
+});
+
+//リセットボタン処理
+document.getElementById("reset").onclick = function(){
+	let full,current,x;
+	full = fullCountNo;
+	current = keyLength-2;
+	x = full - current;
+
+	//データがあるときのみリセット有効
+	if(keyLength-1 != 0){
+		let result = window.confirm(keyLength-1 + "件が削除されます (総通報数はリセットされません)\n本当によろしいですか？");
+		if(result){
+			for(x; x <= fullCountNo; x++){
+				chrome.storage.local.remove(`${x}`, function() {
+				});			
+			}
+			alert("完了");
+			location.reload();
+		}
+	}
+}
