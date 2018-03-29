@@ -1,4 +1,4 @@
-![](https://img.shields.io/badge/ver-0.0.2-brightgreen.svg?longCache=true&style=flat-square)
+![](https://img.shields.io/badge/ver-0.0.3-brightgreen.svg?longCache=true&style=flat-square)
 ![](https://img.shields.io/badge/JavaScript-ES6-yellow.svg?longCache=true&style=flat-square)
 ![](https://img.shields.io/badge/web%20browser-Google%20Chrome-blue.svg?longCache=true&style=flat-square)
 
@@ -11,6 +11,7 @@
 - タイムライン上もしくは個別ツイートの下部に通報ボタンを設置
 - 通報ボタンをクリックすると通報ページが開き，URLとユーザ名を自動で入力
 - 通報履歴の閲覧とCSVのエクスポートが可能（ver0.0.2）
+- 通報時の「任意」と「メールアドレス」の欄を設定，自動入力可能（ver0.0.3）
 
 ## ビルド
 ### 環境
@@ -27,4 +28,4 @@
 1. 問題のツイートを探す
 1. ツイート下部の★マークを押下する
 1. 通報ページが開く*  
-*任意，メールの欄，チェックボックスは自動で入力されません
+~~*任意，メールの欄，チェックボックスは自動で入力されません~~(ver0.0.3にて実装)
