@@ -2,7 +2,7 @@ html{
     background-color:#E0ECF8;
 }
 body {
-    width: 700px;
+    width: auto;
     height: 500px;
     margin: 10px;
     padding: 10px;
@@ -32,12 +32,15 @@ h1{
     background-color: rgb(67, 201, 192);
 }
 
-#reset{
-    background-color: rgb(223, 54, 54);
+#reset,#countReset{
+    background-color: rgb(223, 170, 54);
     font-size: 20px;
     color:white;
-    margin:50px;
+    margin:30px 10px;
     padding:20px;
     text-decoration:none;
     border-radius: 10px;
+}
+#countReset{
+    background-color: rgb(223, 54, 54);
 }

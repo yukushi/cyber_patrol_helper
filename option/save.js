@@ -70,6 +70,12 @@ chrome.storage.local.get(function (localData) {
 //通報数の表示
 chrome.storage.local.get("zCount",function(value){
 	fullCountNo = value.zCount;
+
+	//０の場合に0と表示されるよう調整
+	if (fullCountNo == undefined){
+		fullCountNo = -1;
+		keyLength = 1;
+	}
 	document.getElementById("fullCountNo").innerText = "今までの総通報数：" + Number(fullCountNo+1);
 	document.getElementById("countNo").innerText = "現在の通報数：" + Number(keyLength-1);
 });
@@ -82,7 +88,7 @@ document.getElementById("reset").onclick = function(){
 	x = full - current;
 
 	//データがあるときのみリセット有効
-	if(keyLength-1 != 0){
+	if(keyLength-1 > 0){
 		let result = window.confirm(keyLength-1 + "件が削除されます (総通報数はリセットされません)\n本当によろしいですか？");
 		if(result){
 			for(x; x <= fullCountNo; x++){
@@ -91,6 +97,20 @@ document.getElementById("reset").onclick = function(){
 			}
 			alert("完了");
 			location.reload();
+		}
+	}
+}
+
+//総数リセットボタン処理
+document.getElementById("countReset").onclick = function(){
+	let result = window.confirm("総数含め，全て消去されます");
+	if(result){
+		try{
+			chrome.storage.local.clear();
+			alert("完了");
+			location.reload();
+		}catch(e){
+			alert("Error");
 		}
 	}
 }
