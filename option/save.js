@@ -101,7 +101,7 @@ document.getElementById("reset").onclick = function(){
 	}
 }
 
-//総数リセットボタン処理
+//全リセットボタン処理
 document.getElementById("countReset").onclick = function(){
 	let result = window.confirm("総数含め，全て消去されます");
 	if(result){

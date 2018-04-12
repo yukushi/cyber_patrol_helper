@@ -1,4 +1,4 @@
-![](https://img.shields.io/badge/ver-0.0.3-brightgreen.svg?longCache=true&style=flat-square)
+![](https://img.shields.io/badge/ver-0.0.4-brightgreen.svg?longCache=true&style=flat-square)
 ![](https://img.shields.io/badge/JavaScript-ES6-yellow.svg?longCache=true&style=flat-square)
 ![](https://img.shields.io/badge/web%20browser-Google%20Chrome-blue.svg?longCache=true&style=flat-square)
 
@@ -28,4 +28,7 @@
 1. 問題のツイートを探す
 1. ツイート下部の★マークを押下する
 1. 通報ページが開く*  
-~~*任意，メールの欄，チェックボックスは自動で入力されません~~(ver0.0.3にて実装)
+
+## おまけ
+[tweetStatusChecker.py](https://gist.github.com/yukushi/ae98f33848894661a549bbeb6644eb87)
+を使って生成したCSVファイルを読み込むと，自動でツイートの状態（凍結済み，鍵アカウント化など）を読み取り，その情報を書き込んだ状態で新たなファイルを生成します．

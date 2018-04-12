@@ -27,10 +27,6 @@ chrome.runtime.sendMessage({
       sn = response.sn;
       temp = response.any;
       yourMail = response.mail;
-      console.log(id);
-      console.log(sn);
-      console.log(temp);
-      console.log(yourMail);
     }
   }
 );
