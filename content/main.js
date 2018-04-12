@@ -17,20 +17,18 @@ function setButton(){
         oldUrl = newUrl;
     }
 
-    console.log("diff=" + diff);
-    console.log("count=" +count);
+    // console.log("diff=" + diff);
+    // console.log("count=" +count);
     
     //タイムラインの変化があったら実行，URL移動があったら無制限に実行
     if(diff > 0 || changeURL == 1){
         changeURL = 0;
         for(let i = 0;i<len;i++){
             let twAction = document.getElementsByClassName("ProfileTweet-actionList")[i];
-
-            //要素数
-            let twActionChild = twAction.childElementCount;
+            let repoCheck = document.getElementsByClassName("TwRepo")[i];
 
             //2重設置回避
-            if(twActionChild==4){
+            if(repoCheck==undefined){
 
                 //タイムライン用
                 //ツイートIDとスクリーンネーム取得
